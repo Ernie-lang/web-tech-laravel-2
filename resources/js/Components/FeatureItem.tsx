@@ -1,6 +1,7 @@
 import { Feature } from "@/types";
 import { useState } from "react";
 import { Link } from "@inertiajs/react";
+import FeatureActionsDropdown from "./FeatureActionsDropdown";
 
 export default function  FeatureItem({feature}: {feature: Feature}) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -10,7 +11,7 @@ export default function  FeatureItem({feature}: {feature: Feature}) {
     }
 
     return (
-        <div className="mb-4 overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
+        <div className="mb-4 overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800 min-h-44">
             <div className="p-6 text-gray-900 dark:text-gray-100 flex gap-8">
                 <div className="flex flex-col items-center">
                     <button>
@@ -45,6 +46,9 @@ export default function  FeatureItem({feature}: {feature: Feature}) {
                     {(feature.description || '').length <= 200 && (
                         <p>{feature.description}</p>
                     )}
+                </div>
+                <div>
+                    <FeatureActionsDropdown feature={feature} />
                 </div>
             </div>
         </div>
