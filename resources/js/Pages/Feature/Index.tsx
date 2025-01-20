@@ -13,7 +13,7 @@ export default function Index({features}: {features: PaginatedData<Feature>}) {
                 </h2>
             }
         >
-            <Head title="Dashboard" />
+            <Head title="Features" />
 
                     {features.data.map(feature => (
                         <FeatureItem feature={feature} />
