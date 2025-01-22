@@ -19,7 +19,7 @@ export default function Show({feature}: {feature: Feature}) {
         >
             <Head title="{'Feature ' + feature.name}" />
 
-            <div className="mb-4 overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800">
+            <div className="mb-4 overflow-hidden bg-white shadow-lg shadow-green-800 sm:rounded-lg dark:bg-gray-900 border-2 border-green-800">
             <div className="p-6 text-gray-900 dark:text-gray-100 flex gap-8">
                 <FeatureUpvoteDownvote feature={feature} />
                 <div className="flex-1">

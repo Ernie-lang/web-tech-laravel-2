@@ -8,6 +8,7 @@ export interface User {
     created_at: string;
     permissions: string[];
     roles: string[];
+    profile_image: string | null;
 }
 
 export type PaginatedData<T = any> = {

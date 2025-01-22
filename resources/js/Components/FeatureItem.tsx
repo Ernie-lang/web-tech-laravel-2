@@ -12,7 +12,7 @@ export default function  FeatureItem({feature}: {feature: Feature}) {
     }
 
     return (
-        <div className="mb-4 overflow-hidden bg-white shadow-sm sm:rounded-lg dark:bg-gray-800 min-h-44">
+        <div className="mb-4 overflow-hidden bg-white shadow-lg shadow-green-900 sm:rounded-lg dark:bg-gray-900 min-h-44 border-green-900 border-2">
             <div className="p-6 text-gray-900 dark:text-gray-100 flex gap-8">
                 <FeatureUpvoteDownvote feature={feature} />
                 <div className="flex-1">
