@@ -2,6 +2,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
+import { can, hasRole } from '@/helpers';
 import { Link, usePage } from '@inertiajs/react';
 import { PropsWithChildren, ReactNode, useState } from 'react';
 
@@ -17,7 +18,7 @@ export default function Authenticated({
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="min-h-screen bg-gray-100 dark:bg-black">
             <nav className="border-b border-gray-100 bg-white dark:border-gray-700 dark:bg-gray-800">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 justify-between">
@@ -41,6 +42,12 @@ export default function Authenticated({
                                 >
                                     Features
                                 </NavLink>
+                                {can(user, 'manage_users') && <NavLink
+                                    href={route('user.index')}
+                                    active={route().current('user.index')}
+                                >
+                                    Users
+                                </NavLink>}
                                 
                             </div>
                         </div>
@@ -152,6 +159,12 @@ export default function Authenticated({
                         >
                             Features
                         </ResponsiveNavLink>
+                        {can(user, 'manage_users') && <ResponsiveNavLink
+                            href={route('user.index')}
+                            active={route().current('user.index')}
+                        >
+                            Users
+                        </ResponsiveNavLink>}
                     </div>
 
                     <div className="border-t border-gray-200 pb-1 pt-4 dark:border-gray-600">
